@@ -5,9 +5,9 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/codebyharish/maven_assessment.git'
+                git branch: 'main', url: 'https://github.com/codebyharish/maven_assessment.git'
             }
-        }
+        }    
 
         stage('Compile') {
             steps {
