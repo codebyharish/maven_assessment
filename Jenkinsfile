@@ -1,31 +1,28 @@
 pipeline {
-    agent any
+agent any
 
-    stages {
+```
+stages {
 
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/codebyharish/maven_assessment.git'
-            }
-        }    
-
-        stage('Compile') {
-            steps {
-                sh 'mvn compile'
-            }
+    stage('Compile') {
+        steps {
+            bat 'mvn compile'
         }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-
     }
+
+    stage('Test') {
+        steps {
+            bat 'mvn test'
+        }
+    }
+
+    stage('Build') {
+        steps {
+            bat 'mvn clean install'
+        }
+    }
+
+}
+```
+
 }
